@@ -12,36 +12,36 @@ option go_package = "ecdsa/resharing";
  * The Round 1 data is broadcast to peers of the New Committee in this message.
  */
 message DGRound1Message {
-  bytes ecdsa_pub_x = 1;
-  bytes ecdsa_pub_y = 2;
-  bytes v_commitment = 3;
+    bytes ecdsa_pub_x = 1;
+    bytes ecdsa_pub_y = 2;
+    bytes v_commitment = 3;
 }
 
 /*
  * The Round 2 data is broadcast to other peers of the New Committee in this message.
  */
 message DGRound2Message1 {
-  message DLNProof {
-    repeated bytes alpha = 1;
-    repeated bytes t = 2;
-  }
-  message ModProof {
-    bytes w = 1;
-    repeated bytes x = 2;
-    repeated bool a = 3;
-    repeated bool b = 4;
-    repeated bytes z = 5;
-  }
-  reserved 6, 7;
-  bytes paillier_n = 1;
-  repeated bytes paillier_proof = 2;
-  bytes n_tilde = 3;
-  bytes h1 = 4;
-  bytes h2 = 5;
-  DLNProof dlnproof_1 = 8;
-  DLNProof dlnproof_2 = 9;
-  ModProof modproof = 10;
-  ModProof modproof_tilde = 11;
+    message DLNProof {
+        repeated bytes alpha = 1;
+        repeated bytes t = 2;
+    }
+    message ModProof {
+        bytes w = 1;
+        repeated bytes x = 2;
+        repeated bool a = 3;
+        repeated bool b = 4;
+        repeated bytes z = 5;
+    }
+    reserved 6, 7;
+    bytes paillier_n = 1;
+    repeated bytes paillier_proof = 2;
+    bytes n_tilde = 3;
+    bytes h1 = 4;
+    bytes h2 = 5;
+    DLNProof dlnproof_1 = 8;
+    DLNProof dlnproof_2 = 9;
+    ModProof modproof = 10;
+    ModProof modproof_tilde = 11;
 }
 
 /*
@@ -54,35 +54,35 @@ message DGRound2Message2 {
  * The Round 3 data is sent to peers of the New Committee in this message.
  */
 message DGRound3Message1 {
-  bytes share = 1;
+    bytes share = 1;
 }
 
 /*
  * The Round 3 data is broadcast to peers of the New Committee in this message.
  */
 message DGRound3Message2 {
-  repeated bytes v_decommitment = 1;
+    repeated bytes v_decommitment = 1;
 }
 
 /*
  * The Round 4 data is sent to other peers of the New Committee in this message.
  */
 message DGRound4Message1 {
-  message FactorProof {
-    bytes p = 1;
-    bytes q = 2;
-    bytes a = 3;
-    bytes b = 4;
-    bytes t = 5;
-    bytes sigma = 6;
-    bytes z1 = 7;
-    bytes z2 = 8;
-    bytes w1 = 9;
-    bytes w2 = 10;
-    bytes v = 11;
-  }
-  FactorProof facproof = 1;
-  FactorProof facproof_tilde = 2;
+    message FactorProof {
+        bytes p = 1;
+        bytes q = 2;
+        bytes a = 3;
+        bytes b = 4;
+        bytes t = 5;
+        bytes sigma = 6;
+        bytes z1 = 7;
+        bytes z2 = 8;
+        bytes w1 = 9;
+        bytes w2 = 10;
+        bytes v = 11;
+    }
+    FactorProof facproof = 1;
+    FactorProof facproof_tilde = 2;
 }
 
 /*
